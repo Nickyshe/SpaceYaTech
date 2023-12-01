@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,7 +36,8 @@ fun Screen(){
     ) {
         Text(text = "Upcoming trips",
             fontWeight = FontWeight.Bold,
-            fontSize = 15.sp
+            fontSize = 15.sp,
+            modifier = Modifier.testTag("upcoming_trips")
             )
         Spacer(modifier =  Modifier.height(40.dp))
 
@@ -48,8 +50,10 @@ fun Screen(){
         ) {
             Card(
                 modifier = Modifier
+                    .testTag("dates_and_dinner_card")
                     .width(150.dp)
                     .height(200.dp),
+
                 colors = CardDefaults.elevatedCardColors(
                     MaterialTheme.colorScheme.onPrimaryContainer
                 )
@@ -75,6 +79,7 @@ fun Screen(){
 
             Card(
                 modifier = Modifier
+                    .testTag("beach_and_sand_card")
                     .width(150.dp)
                     .height(200.dp),
                 colors = CardDefaults.elevatedCardColors(
